@@ -4,7 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%);
+    background: url("../estilos/img/fono32.png") no-repeat center center;
+    background-size: cover; /* Ajusta la imagen al fondo */
     padding: 0; /* Sin márgenes */
 }
 
@@ -77,9 +78,8 @@
     }
 }
 .imagen-responsiva {
-    max-width: 1000px;
-    height: auto;
-    max-height: 600px;
-    overflow: hidden;
+    max-width: 800px; /* Se adapta al contenedor */
+    height: auto; /* Mantiene la proporción */
+    max-height: 600px; /* Evita que sea demasiado grande */
+    overflow: hidden; /* Previene desbordamientos */
 }
-

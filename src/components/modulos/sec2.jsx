@@ -13,7 +13,7 @@ const CajaConDosDivs = () => {
           <p className="texto-helado">
             Más que <span className="color-helado">helados</span>, creamos sonrisas
           </p>
-          <button className="btn btn-dark mt-3">Clic Aquí</button>
+          <button className="btn btn-dark mt-3">Pedir</button>
         </div>
 
         {/* Caja derecha (se oculta en móviles) */}
