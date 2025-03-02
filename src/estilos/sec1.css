@@ -1,6 +1,19 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.container-fluid {
+    height: 100vh; /* Toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%);
+    padding: 0; /* Sin márgenes */
 }
+.row {
+    width: 100%;
+    height: 100vh; /* Casi toda la pantalla */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cajas se reorganicen */
+    margin: 0; /* Pegado a los bordes */
+}
+
+
 

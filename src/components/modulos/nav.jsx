@@ -37,7 +37,7 @@
 
     return (
         <AppBar position="static" sx={{ 
-            backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+            backgroundColor: 'rgba(238, 234, 234, 0.5)', 
             backdropFilter: 'blur(10px)'
         }}>
         <Container maxWidth="xl">
@@ -94,7 +94,7 @@
                 >
                 {pages.map((page) => (
                     <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                    <Typography sx={{ textAlign: 'center'}}>{page}</Typography>
                     </MenuItem>
                 ))}
                 </Menu>
@@ -129,7 +129,7 @@
                 <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
+                    sx={{ my: 2, color: 'black', display: 'block' }}
                 >
                     {page}
                 </Button>
