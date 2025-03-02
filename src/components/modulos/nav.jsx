@@ -11,10 +11,10 @@
     import Button from '@mui/material/Button';
     import Tooltip from '@mui/material/Tooltip';
     import MenuItem from '@mui/material/MenuItem';
-    import AdbIcon from '@mui/icons-material/Adb';
+    import Logok from '../../estilos/img/Logo-AlKeem.png';
 
-    const pages = ['Inicio', 'Productos', 'sabores', 'descuentos'];
-    const settings = ['Mi Perfil', 'Pedidos', 'cerrar Sesion'];
+    const pages = ['Products', 'Pricing', 'Blog'];
+    const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
     function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -39,7 +39,11 @@
         <AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            {/* Logo en pantallas medianas y grandes */}
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, alignItems: 'center' }}>
+                <img src={Logok} alt="Logo AlKeem" style={{ height: '70px', width: 'auto' }} />
+            </Box>
+            
             <Typography
                 variant="h6"
                 noWrap
@@ -55,9 +59,9 @@
                 textDecoration: 'none',
                 }}
             >
-                LOGO
             </Typography>
 
+            {/* Menú hamburguesa en dispositivos móviles */}
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                 <IconButton
                 size="large"
@@ -92,7 +96,12 @@
                 ))}
                 </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            
+            {/* Logo en dispositivos móviles */}
+            <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, alignItems: 'center' }}>
+                <img src={Logok} alt="Logo AlKeem" style={{ height: '70px', width: 'auto' }} />
+            </Box>
+            
             <Typography
                 variant="h5"
                 noWrap
@@ -109,8 +118,9 @@
                 textDecoration: 'none',
                 }}
             >
-                LOGO
             </Typography>
+            
+            {/* Menú de navegación en pantallas medianas y grandes */}
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map((page) => (
                 <Button
@@ -122,6 +132,8 @@
                 </Button>
                 ))}
             </Box>
+
+            {/* Menú de usuario */}
             <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -156,4 +168,5 @@
         </AppBar>
     );
     }
+
     export default ResponsiveAppBar;
