@@ -13,7 +13,7 @@
     import MenuItem from '@mui/material/MenuItem';
     import Logok from '../../estilos/img/Logo-AlKeem.png';
 
-    const pages = ['Products', 'Pricing', 'Blog'];
+    const pages = ['Inicio', 'Helados', 'Sabores','Descuentos','Fiesta'];
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
     function ResponsiveAppBar() {
@@ -36,7 +36,10 @@
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{ 
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+            backdropFilter: 'blur(10px)'
+        }}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>
             {/* Logo en pantallas medianas y grandes */}
