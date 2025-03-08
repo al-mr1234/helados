@@ -5,6 +5,8 @@ import Sec3 from './modulos/sec3';
 import Sec4 from './modulos/sec4';
 import Sec5 from './modulos/sec5';
 import Sec6 from './modulos/sec6';
+import Footer from './modulos/footer';
+
 
 export default function Home() {
     return (
@@ -15,6 +17,7 @@ export default function Home() {
             <Sec4/>
             <Sec5/>
             <Sec6/>
+            <Footer/>
         </>
     ) 
 }

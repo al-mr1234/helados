@@ -37,8 +37,9 @@
 
     return (
         <AppBar position="static" sx={{ 
-            backgroundColor: 'rgba(248, 61, 142, 0.58)', 
-            backdropFilter: 'blur(10px)'
+        background: "linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%)",
+        fontWeight: "bold",
+            
         }}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>

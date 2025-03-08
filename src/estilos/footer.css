@@ -1,0 +1,155 @@
+    /* Estilos generales del footer */
+    .footer {
+        width: 100%;
+        background: linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%);
+        color: rgb(0, 0, 0);
+        padding: 20px;
+        position: relative;
+        font-weight: bold;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    /* Secciones del footer */
+    .footer-section {
+        margin-bottom: 30px;
+        
+    }
+    
+    /* Logo */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    /* Navegación */
+    .nav-title {
+        color: #40cfc4;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        
+    }
+    
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px; 
+    }
+    
+    .nav-bullet {
+        color: #e83e8c;
+        margin-right: 8px;
+    }
+    
+    .nav-link {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+    
+    /* Información de contacto */
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        
+    }
+    
+    .contact-icon {
+        color: #3CBED0;
+        flex-shrink: 0;
+        
+    }
+    
+    .contact-label {
+        font-size: 1.4rem;
+        color: #F83D8E;
+        margin: 2px;
+        font-weight: bold;
+    }
+    
+    .contact-text {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+    
+    /* Redes sociales */
+    .social-container {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-link {
+        background-color: #555;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    
+    .social-link:hover {
+        background-color: #666;
+    }
+    
+    /* Copyright */
+    .copyright {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-top: 30px;
+        color: #aaa;
+    }
+    
+    /* Botón volver arriba */
+    .scroll-top-button {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        background-color: #e83e8c;
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .scroll-top-button:hover {
+        background-color: #d52c7b;
+    }
+    
+    /* Responsive design */
+    @media (min-width: 768px) {
+        .footer-container {
+        flex-direction: row;
+        align-items: flex-start;
+        }
+        
+        .footer-section {
+        margin-bottom: 0;
+        }
+    }
