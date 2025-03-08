@@ -1,8 +1,8 @@
     /* Estilos generales del footer */
     .footer {
         width: 100%;
-        background: linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%);
-        color: rgb(0, 0, 0);
+        background: #555;
+        color: rgb(255, 255, 255);
         padding: 20px;
         position: relative;
         font-weight: bold;
@@ -30,9 +30,10 @@
     }
     /* Navegación */
     .nav-title {
-        color: #40cfc4;
+        color: #d52c7b;
         margin-bottom: 10px;
-        font-size: 0.9rem;
+        font-size: 1.5rem;
+        font-weight: bold;
         
     }
     
@@ -49,12 +50,12 @@
     }
     
     .nav-bullet {
-        color: #e83e8c;
+        color: #3CB;
         margin-right: 8px;
     }
     
     .nav-link {
-        color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         text-decoration: none;
         font-size: 0.9rem;
         font-weight: bold;
@@ -69,6 +70,9 @@
         display: flex;
         align-items: flex-start;
         margin-bottom: 15px;
+        margin: 40px;
+        
+        
         
     }
     
@@ -80,14 +84,15 @@
     
     .contact-label {
         font-size: 1.4rem;
-        color: #F83D8E;
-        margin: 2px;
+        color: #d52c7b;
         font-weight: bold;
     }
     
     .contact-text {
         font-size: 1.1rem;
         margin: 0;
+        margin-left: 10px;
+        
     }
     
     /* Redes sociales */
@@ -104,12 +109,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: #d52c7b;
         transition: background-color 0.3s;
     }
     
     .social-link:hover {
-        background-color: #666;
+        background-color: #ffffff;
     }
     
     /* Copyright */

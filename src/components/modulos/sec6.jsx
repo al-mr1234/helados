@@ -28,7 +28,7 @@ const CajaConDosDivs = () => {
 
         {/* Caja derecha (se oculta en móviles) */}
         <div className="col-md-6 col-12 caja-derecha d-none d-md-flex align-items-center justify-content-center">
-          <img src={Img6} className="imagen-responsiva" alt="Helado" style={{ height:'900px', width: '900px'}} />
+          <img src={Img6} className="imagen-responsiva" alt="Helado" style={{ height:'900px', width: '580px'}} />
         </div>
       </div>
     </div>

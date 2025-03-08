@@ -47,21 +47,20 @@
             <div className="contact-item">
                 <MapPin className="contact-icon" size={30} />
                 <div>
-                <h4 className="contact-label">Address:</h4>
-                <p className="contact-text">123 King Street Melbourne, 3000,<br />Australia</p>
+                <p className="contact-text">Carera78 #108B - Colombia</p>
                 </div>
             </div>
             
             <div className="contact-item">
                 <Phone className="contact-icon" size={30} />
-                <p className="contact-text">+12345678123</p>
+                <p className="contact-text"> +57 320 473 3254</p>
             </div>
             
             <div className="contact-item">
                 <Mail className="contact-icon" size={30} />
                 <div>
-                <h4 className="contact-label">Email:</h4>
-                <p className="contact-text">info@example.com</p>
+                
+                <p className="contact-text">alkeem@gmail.com</p>
                 </div>
             </div>
             </div>

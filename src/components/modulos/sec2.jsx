@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importar Bootstrap
 import "../../estilos/sec2.css"; // Importar CSS personalizado
 import Img1 from "../../estilos/img/sec2.png";
+import Typewriter from 'typewriter-effect';
 
 const CajaConDosDivs = () => {
   return (
@@ -11,9 +12,18 @@ const CajaConDosDivs = () => {
       <div className="row caja-principal d-flex flex-wrap">
         {/* Caja izquierda */}
         <div className="col-md-6 col-12 caja-izquierda d-flex flex-column align-items-center justify-content-center">
-          <p className="texto-helado">
-            Más que <span className="color-helado">helados</span>, creamos sonrisas
-          </p>
+        <span className='maquina'>
+                <Typewriter 
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString(' <span style="color: #F83D8E;">Felicidad </span>servida </br>en cada helado.')
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .typeString('Más que <span style="color: #F83D8E;">Helados,</span> </br>creamos sonrisas.')
+                      .start();
+                  }}
+                />
+              </span>
           <div data-tooltip="¡Pidelo ya!🍦" class="button">
           <div class="button-wrapper">
             <div class="text">Pedir</div>

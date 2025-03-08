@@ -37,7 +37,7 @@
 
     return (
         <AppBar position="static" sx={{ 
-        background: "linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%)",
+        background: "#555",
         fontWeight: "bold",
             
         }}>
@@ -130,7 +130,7 @@
                 <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: 'black', display: 'block' }}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                     {page}
                 </Button>
