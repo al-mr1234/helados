@@ -14,7 +14,7 @@ const CajaConDosDivs = () => {
             Todos nuestros sabores de <span className="color-helado">helados</span>
           </p>
           <h4>Descubre todos nuestros deliciosos sabores de helado y encuentra tu favorito. ¡Cada cucharada es una experiencia única</h4>
-          <div data-tooltip="¡Pidelo ya!🍦" class="button">
+          <div data-tooltip="¡Sabores!🍦" class="button">
           <div class="button-wrapper">
             <div class="text">Sabores</div>
     <span class="icon">

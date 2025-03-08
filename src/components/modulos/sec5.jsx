@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importar Bootstrap
-import "../../estilos/sec5.css"; // Importar CSS personalizado
+import "../../estilos/sec2.css"; // Importar CSS personalizado
 import Img1 from "../../estilos/img/helado5.png";
 
 const CajaConDosDivs = () => {
@@ -19,7 +19,7 @@ const CajaConDosDivs = () => {
           <p className="texto-elegante">
           ¡No te pierdas nuestros <span className="color-helado">Descuentos!</span>  </p>
             <h4>Aprovecha las ofertas que tenemos para ti y disfruta de tus helados favoritos al mejor precio. Visita nuestro apartado de descuentos y encuentra promociones irresistibles. ¡El momento perfecto para consentirte está aquí!</h4>
-            <div data-tooltip="¡Pidelo ya!🍦" class="button">
+            <div data-tooltip="¡Descuentos!" class="button">
           <div class="button-wrapper">
             <div class="text">Descuentos</div>
     <span class="icon">
