@@ -37,7 +37,7 @@
 
     return (
         <AppBar position="static" sx={{ 
-            backgroundColor: 'rgba(238, 234, 234, 0.5)', 
+            backgroundColor: 'rgba(248, 61, 142, 0.58)', 
             backdropFilter: 'blur(10px)'
         }}>
         <Container maxWidth="xl">
