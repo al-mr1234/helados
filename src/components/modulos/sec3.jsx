@@ -19,7 +19,7 @@ const CajaConDosDivs = () => {
           <p className="titulo3">
             Explora la variedad de <span className="color-helado">helados</span> que tenemos para ti </p>
             <h4>Sumérgete en un mundo de sabores únicos y texturas irresistibles. Desde lo clásico hasta lo sorprendente, nuestra variedad de helados está hecha para deleitar a todos los gustos. ¡Encuentra tu favorito y disfruta cada momento al máximo!</h4>
-            <div data-tooltip="¡Pidelo ya!🍦" class="button">
+            <div data-tooltip="¡Explora!🍦" class="button">
                 <div class="button-wrapper">
                   <div class="text">Helados</div>
           <span class="icon">
