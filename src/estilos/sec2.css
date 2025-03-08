@@ -4,7 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     background: linear-gradient(90deg, #EFD7EF 8%, #F5F9FC 39%, #F8EAE1 66%, #EAF8F9 91%);
+
+    background: url("../estilos/img/fondo343.png") no-repeat center center;
+
     background-size: cover; /* Ajusta la imagen al fondo */
     padding: 0; /* Sin márgenes */
 }
