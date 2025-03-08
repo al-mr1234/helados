@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("../estilos/img/fono32.png") no-repeat center center;
+    background: url("../estilos/img/fondo343.png") no-repeat center center;
     background-size: cover; /* Ajusta la imagen al fondo */
     padding: 0; /* Sin márgenes */
 }
