@@ -1,7 +1,11 @@
 import React from 'react'
+import Nav from '../components/modulos/nav'
 
 export default function Sabores() {
     return (
-        <div>Sabores</div>
+        <>
+            <Nav />
+            </>
+
     )
 }
