@@ -1,0 +1,6 @@
+.helado-card:hover{
+    transform: scale(1.05);
+    opacity: 0.9; /* Reduce la opacidad */
+}
+
+  

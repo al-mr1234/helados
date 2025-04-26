@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importar Bootstrap
 import "../../estilos/sec2.css"; // Importar CSS personalizado
 import Img4 from "../../estilos/img/helado4.png";
