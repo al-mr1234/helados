@@ -12,8 +12,17 @@
     import Tooltip from '@mui/material/Tooltip';
     import MenuItem from '@mui/material/MenuItem';
     import Logok from '../../estilos/img/Logo-AlKeem.png';
+    import { Link } from 'react-router-dom'; // Importa Link
+    // segúrate de que la ruta sea correcta
 
-    const pages = ['Inicio', 'Helados', 'Sabores','Descuentos','Fiesta'];
+    const pages = [
+    { name: 'Inicio', path: '/Home' },
+    { name: 'Helados', path: '/Productos' },
+    { name: 'Sabores', path: '/Sabores' },
+    { name: 'Descuentos', path: '/descuentos' },
+    { name: 'Fiesta', path: '/fiesta' }
+    ];
+
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
     function ResponsiveAppBar() {
@@ -23,6 +32,7 @@
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
+
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
@@ -36,45 +46,17 @@
     };
 
     return (
-        <AppBar position="static" sx={{ 
-        background: "#555",
-        fontWeight: "bold",
-            
-        }}>
+        <AppBar position="static" sx={{ background: "#555", fontWeight: "bold" }}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>
             {/* Logo en pantallas medianas y grandes */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, alignItems: 'center' }}>
                 <img src={Logok} alt="Logo AlKeem" style={{ height: '70px', width: 'auto' }} />
             </Box>
-            
-            <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                }}
-            >
-            </Typography>
 
             {/* Menú hamburguesa en dispositivos móviles */}
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-                >
+                <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
                 <MenuIcon />
                 </IconButton>
                 <Menu
@@ -94,45 +76,27 @@
                 sx={{ display: { xs: 'block', md: 'none' } }}
                 >
                 {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{ textAlign: 'center'}}>{page}</Typography>
+                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Link to={page.path} style={{ textDecoration: 'none' }}>
+                        <Typography sx={{ textAlign: 'center' }}>{page.name}</Typography>
+                    </Link>
                     </MenuItem>
                 ))}
                 </Menu>
             </Box>
-            
+
             {/* Logo en dispositivos móviles */}
             <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, alignItems: 'center' }}>
                 <img src={Logok} alt="Logo AlKeem" style={{ height: '70px', width: 'auto' }} />
             </Box>
-            
-            <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                }}
-            >
-            </Typography>
-            
+
             {/* Menú de navegación en pantallas medianas y grandes */}
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map((page) => (
-                <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                    {page}
+                <Button key={page.name} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                    <Link to={page.path} style={{ textDecoration: 'none', color: 'white' }}>
+                    {page.name}
+                    </Link>
                 </Button>
                 ))}
             </Box>
