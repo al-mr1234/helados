@@ -1,0 +1,47 @@
+/* SaboresHelado.css - actualizado */
+
+.row.g-4 {
+    /* max-height y overflow eliminados */
+    padding-right: 5px; /* Puedes dejarlo si quieres */
+}
+
+/* Scrollbar personalizado solo para toda la página si quieres (opcional) */
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #9e9e9e;
+    border-radius: 3px;
+}
+
+/* Para Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #9e9e9e #e0e0e0;
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Contenedor */
+.container-fluid {
+    overflow: hidden; /* Puedes quitarlo si ves que corta algo */
+}
+
+/* Imágenes */
+.card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
