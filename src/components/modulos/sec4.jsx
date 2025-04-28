@@ -11,7 +11,7 @@ const CajaConDosDivs = () => {
         {/* Caja izquierda */}
         <div className="col-md-6 col-12 caja-izquierda d-flex flex-column align-items-center justify-content-center">
           <p className="texto-helado">
-            Todos nuestros sabores de <span className="color-helado">helados</span>
+            Todos nuestros sabores de <span className="highlight">helados</span>
           </p>
           <h4>Descubre todos nuestros deliciosos sabores de helado y encuentra tu favorito. ¡Cada cucharada es una experiencia única</h4>
           <div data-tooltip="¡Sabores!🍦" class="button">

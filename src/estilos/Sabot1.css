@@ -1,14 +1,14 @@
 #sabor1 {
-    text-align: center;  /* Centra el texto */
-    font-family: Berkshire Swash , cursive; /* Fuente */
+    text-align: center; /* Centra el texto */
+    font-family: 'Berkshire Swash', cursive; /* Fuente */
     display: flex;
     flex-direction: column; /* Asegura que los elementos estén en columna */
     align-items: center; /* Centra los textos horizontalmente */
     justify-content: center; /* Centra los textos verticalmente */
     height: 50vh; /* Ocupar toda la altura de la pantalla */
-    background-color: #e0d2e3; /* Color de fondo como en el diseño original */
-    overflow: hidden; /* Evita desbordamiento */
+    background-color: #e0d2e3; /* Color de fondo */
     position: relative; /* Para posicionamiento absoluto de los hijos */
+    overflow: hidden; /* Evita desbordamiento */
 }
 
 #sabor1 h1 {
@@ -19,14 +19,20 @@
     z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
 }
 
-#sabor1 h1:nth-child(2) span {
-    color: #F83D8E; /* Color especial para "helados" */
+/* Mejora la visibilidad de las imágenes */
+#sabor1 .img-fluid {
+    max-width: 550px;
+    object-fit: contain;
 }
 
-/* Ajustes responsive para dispositivos pequeños */
+/* Ajustes responsivos para dispositivos pequeños */
 @media (max-width: 768px) {
     #sabor1 h1 {
         font-size: 2rem;
+    }
+
+    #sabor1 .img-fluid {
+        max-width: 400px;
     }
 }
 
@@ -34,8 +40,12 @@
     #sabor1 h1 {
         font-size: 1.8rem;
     }
-    
+
     #sabor1 {
         height: 40vh; /* Altura reducida en móviles */
+    }
+
+    #sabor1 .img-fluid {
+        max-width: 300px;
     }
 }

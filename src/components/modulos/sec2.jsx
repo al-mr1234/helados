@@ -7,22 +7,22 @@ import Typewriter from 'typewriter-effect';
 const CajaConDosDivs = () => {
   return (
     
-    <div className="container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div className="container-fluid1 d-flex flex-column justify-content-center align-items-center">
       {/* Contenedor principal con dos cajas */}
       <div className="row caja-principal d-flex flex-wrap">
         {/* Caja izquierda */}
         <div className="col-md-6 col-12 caja-izquierda d-flex flex-column align-items-center justify-content-center">
         <span className='maquina'>
-                <Typewriter 
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString(' <span style="color: #F83D8E;">Felicidad </span>servida </br>en cada helado.')
-                      .pauseFor(2000)
-                      .deleteAll()
-                      .typeString('Más que <span style="color: #F83D8E;">Helados,</span> </br>creamos sonrisas.')
-                      .start();
-                  }}
-                />
+        <Typewriter 
+  onInit={(typewriter) => {
+    typewriter
+      .typeString('<span class="highlight">Felicidad</span> servida </br>en cada helado.')
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString('Más que <span class="highlight">Helados,</span> </br>creamos sonrisas.')
+      .start();
+  }}
+/>
               </span>
           <div data-tooltip="¡Pidelo ya!🍦" class="button">
           <div class="button-wrapper">

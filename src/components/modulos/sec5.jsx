@@ -5,7 +5,7 @@ import Img1 from "../../estilos/img/helado5.png";
 
 const CajaConDosDivs = () => {
   return (
-    <div className="container-fluid d-flex flex-column justify-content-center align-items-center">
+    <div className="container-fluid1 d-flex flex-column justify-content-center align-items-center">
       {/* Contenedor principal con dos cajas */}
       <div className="row caja-principal d-flex flex-wrap">
 

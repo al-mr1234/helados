@@ -11,7 +11,7 @@ const CajaConDosDivs = () => {
         {/* Caja izquierda */}
         <div className="col-md-6 col-12 caja-izquierda d-flex flex-column align-items-center justify-content-center">
           <p className="texto6">
-            Fiestas dulces con el sabor de nuestros <span className="color-helado">helados</span>
+            Fiestas dulces con el sabor de nuestros <span className="highlight">helados</span>
           </p>
           <h4>Para que tu celebración sea todo un éxito, te recomendamos realizar tu reserva con al menos 3 a 4 horas de anticipación. Esto nos permitirá preparar todo lo necesario para que disfrutes de nuestros deliciosos helados y productos con la mejor calidad y presentación.</h4>
           <div data-tooltip="¡Reserva ya!" class="button">

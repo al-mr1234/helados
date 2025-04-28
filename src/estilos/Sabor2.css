@@ -1,47 +1,647 @@
-/* SaboresHelado.css - actualizado */
+/* SaboresHelado.css - versión premium */
 
-.row.g-4 {
-    /* max-height y overflow eliminados */
-    padding-right: 5px; /* Puedes dejarlo si quieres */
+/* Estilos generales y de la sección */
+.sabores-seccion {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 }
 
-/* Scrollbar personalizado solo para toda la página si quieres (opcional) */
-body::-webkit-scrollbar {
-    width: 6px;
+.sabores-seccion::before,
+.sabores-seccion::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
 }
 
-body::-webkit-scrollbar-track {
-    background: #e0e0e0;
+.sabores-seccion::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 100%);
 }
 
-body::-webkit-scrollbar-thumb {
-    background: #9e9e9e;
-    border-radius: 3px;
+.sabores-seccion::after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%);
 }
 
-/* Para Firefox */
-body {
-    scrollbar-width: thin;
-    scrollbar-color: #9e9e9e #e0e0e0;
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Cards */
-.card {
+@keyframes scaleIn {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes modalFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Título */
+.titulo-contenedor {
+    margin-bottom: 50px !important;
+}
+
+.titulo-principal {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.titulo-principal::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #FF9A9E 0%, #FAD0C4 100%);
+    transform: scaleX(0);
+    transition: transform 0.8s ease;
+}
+
+.titulo-contenedor.animado .titulo-principal::after {
+    transform: scaleX(1);
+}
+
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.separador {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF9A9E 0%, #FAD0C4 100%);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Tarjetas de sabores */
+.tarjeta-sabor {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    height: 100%;
+}
+
+.tarjeta-sabor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-sabor:hover .imagen-circular {
+    transform: scale(1.08);
+}
+
+.color-barra {
+    height: 8px;
+    width: 100%;
+}
+
+.nombre-sabor {
+    font-family: "Berkshire Swash", cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.imagen-circular {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    padding: 5px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.imagen-contenedor {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-/* Contenedor */
-.container-fluid {
-    overflow: hidden; /* Puedes quitarlo si ves que corta algo */
+.imagen-sabor {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Imágenes */
-.card-img-container {
+.descripcion-sabor {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.boton-ver-mas {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.boton-ver-mas:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal de detalles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: "Berkshire Swash", cursive;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.ingrediente-tag {
+    padding: 5px 15px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    border: 1px solid #e9ecef;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+}
+
+.boton-pedir {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.boton-pedir:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Etiqueta de calorías */
+.calorias-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+    
+    .imagen-circular {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .nombre-sabor {
+        font-size: 1.5rem;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .titulo-principal {
+        font-size: 1.8rem;
+    }/* SaboresHelado.css - versión premium */
+
+/* Estilos generales y de la sección */
+.sabores-seccion {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+.sabores-seccion::before,
+.sabores-seccion::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.sabores-seccion::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 100%);
+}
+
+.sabores-seccion::after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes modalFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Título */
+.titulo-contenedor {
+    margin-bottom: 50px !important;
+}
+
+.titulo-principal {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.titulo-principal::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #FF9A9E 0%, #FAD0C4 100%);
+    transform: scaleX(0);
+    transition: transform 0.8s ease;
+}
+
+.titulo-contenedor.animado .titulo-principal::after {
+    transform: scaleX(1);
+}
+
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.separador {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF9A9E 0%, #FAD0C4 100%);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Tarjetas de sabores */
+.tarjeta-sabor {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    height: 100%;
+}
+
+.tarjeta-sabor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-sabor:hover .imagen-circular {
+    transform: scale(1.08);
+}
+
+.color-barra {
+    height: 8px;
+    width: 100%;
+}
+
+.nombre-sabor {
+    font-family: "Berkshire Swash", cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.imagen-circular {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    padding: 5px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.imagen-contenedor {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imagen-sabor {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.descripcion-sabor {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.boton-ver-mas {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.boton-ver-mas:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal de detalles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: "Berkshire Swash", cursive;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.ingrediente-tag {
+    padding: 5px 15px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    border: 1px solid #e9ecef;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+}
+
+.boton-pedir {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.boton-pedir:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Etiqueta de calorías */
+.calorias-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+    
+    .imagen-circular {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .nombre-sabor {
+        font-size: 1.5rem;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
+}
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
 }
